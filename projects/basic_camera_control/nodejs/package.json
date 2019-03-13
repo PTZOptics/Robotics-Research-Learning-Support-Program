@@ -1,0 +1,23 @@
+{
+  "name": "ptzoptics-camera",
+  "version": "1.0.0",
+  "description": "PTZOptics NodeJS Sample",
+  "main": "index.js",
+  "scripts": {
+    "cert": "./bin/generate_cert.sh server",
+    "start": "node bin/www"
+  },
+  "keywords": [
+    "twitch",
+    "extension"
+  ],
+  "author": "PTZOptics",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dot-emc": "^0.1.2",
+    "express": "^4.16.3",
+    "request": "^2.85.0",
+    "selfsigned": "^1.10.2"
+  }
+}

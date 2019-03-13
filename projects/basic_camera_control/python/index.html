@@ -1,0 +1,114 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>PTZOptics Camera Control Sample</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	</head>
+	<body>
+		<div class = "container">
+			<div class = "form-group">
+				<input placeholder="Camera Ip address" class = "form-control" name = "cam_ip">
+			</div>
+			<div class = "row">
+				<div class = "col-md-3 col-sm-6 col-xs-12">
+					<div class = "form-group">
+						<input placeholder = "Pan speed" class = "form-control" name = "pan_speed">
+					</div>
+				</div>
+				<div class = "col-md-3 col-sm-6 col-xs-12">
+					<div class = "form-group">
+						<input placeholder = "Tilt speed" class = "form-control" name = "tilt_speed">
+					</div>
+				</div>
+				<div class = "col-md-3 col-sm-6 col-xs-12">
+					<div class = "form-group">
+						<input placeholder = "Zoom speed" class = "form-control" name = "zoom_speed">
+					</div>
+				</div>
+				<div class = "col-md-3 col-sm-6 col-xs-12">
+					<div class = "form-group">
+						<input placeholder = "Focus speed" class = "form-control" name = "focus_speed">
+					</div>
+				</div>
+			</div>
+			<div class = "text-center">
+				<button class = "btn btn-primary" onclick = "fireAction('up')">Up</button>
+				<button class = "btn btn-primary" onclick = "fireAction('down')">Down</button>
+				<button class = "btn btn-primary" onclick = "fireAction('left')">Left</button>
+				<button class = "btn btn-primary" onclick = "fireAction('right')">Right</button>
+				<button class = "btn btn-primary" onclick = "fireAction('ptzstop')">Stop</button>
+				<button class = "btn btn-primary" onclick = "fireAction('home')">Home</button>
+				<button class = "btn btn-primary" onclick = "fireAction('zoomin')">ZoomIn</button>
+				<button class = "btn btn-primary" onclick = "fireAction('zoomout')">ZoomOut</button>
+				<button class = "btn btn-primary" onclick = "fireAction('zoomstop')">ZoomStop</button>
+				<button class = "btn btn-primary" onclick = "fireAction('focusin')">FocusIn</button>
+				<button class = "btn btn-primary" onclick = "fireAction('focusout')">FocusOut</button>
+				<button class = "btn btn-primary" onclick = "fireAction('focusstop')">FocusStop</button>
+			</div>
+		</div>
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+
+		function fireAction(action)
+		{
+			/**
+			* {
+    		*	ip: '192.168.1.60',
+			*   action: 'home|up|down|left|right|ptzstop|zoomin|zoomout|zoomstop|focusin|focusout|focusstop|posset|poscall',
+			*   param: {
+			*       panSpeed: number,
+			*       tiltSpeed: number,
+			*       zoomSpeed: number,
+			*       focusSpeed: number,
+			*       presetIndex: number
+			*   }
+			* }
+			*/
+			var param = {};
+			param.ip = $('input[name="cam_ip"]').val();
+			param.action = action;
+			if(action == 'up' || action == 'down' || action == 'left' || action == 'right' || action == '')
+			{
+				param.panSpeed = $('input[name="pan_speed"]').val();
+				param.tiltSpeed = $('input[name="tilt_speed"]').val();
+			}
+			else if(action == 'zoomin' || action == 'zoomout' || action == 'zoomstop')
+ 			{
+				param.zoomspeed = $('input[name="zoom_speed"]').val();
+
+			}
+			else if(action == 'focusin' || action == 'focusout' || action == 'focusstop')
+			{
+				param.zoomspeed = $('input[name="focus_speed"]').val();
+
+			}
+			ajaxPOST(param);
+		}
+
+		/**
+		* send request to the backend server
+		*/
+		function ajaxPOST(param)
+		{
+			$.ajax({
+				url : '/camctrl',
+				data : {
+					param : param
+				},
+				type : 'POST',
+				success : function(res)
+				{
+					console.log(res);
+				},
+				error : function(err)
+				{
+					console.log(err.errorText);
+				}
+			});
+		}
+	</script>
+</html>

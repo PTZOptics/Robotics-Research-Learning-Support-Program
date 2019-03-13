@@ -1,0 +1,51 @@
+// Here we are applying the application's server and port settings.
+
+// We are adding the app.js file
+var app = require('../app');
+
+// We are adding a native and basic nodejs http server module
+var http = require('http');
+
+//Here we are defining the port number.
+var port = 8081;
+
+// Making sure our app is ran on port 8081
+app.set('port', port);
+
+// Start node sever and add app.js
+var server = http.createServer(app);
+server.listen(port);
+
+// When the server receives a error it calls and passes the error to the onError function
+server.on('error', onError);
+// When the server is started and ready to start listening for request it calls onListening function
+server.on('listening', onListening);
+
+
+function onError(error) {
+    if (error.syscall !== 'listen') {
+        throw error;
+    }
+
+    var bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
+
+    // handle specific listen errors with friendly messages
+    switch (error.code) {
+        // Access Denied (Permission Issue)
+        case 'EACCES':
+            console.error(bind + ' requires elevated privileges');
+            process.exit(1);
+            break;
+        // The port is already in use by another service on your device
+        case 'EADDRINUSE':
+            console.error(bind + ' is already in use');
+            process.exit(1);
+            break;
+        default:
+            throw error;
+    }
+}
+
+function onListening() {
+    console.log('PTZOptics Camera Control Sample HTTP Service is running on port ' + port);
+}
