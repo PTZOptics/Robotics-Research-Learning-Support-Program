@@ -1,0 +1,24 @@
+C:\Users\anon\AppData\Local\Temporary Projects\PTZOptics-Robotics\bin\Debug\PTZOptics-Robotics.exe.config
+C:\Users\anon\AppData\Local\Temporary Projects\PTZOptics-Robotics\bin\Debug\PTZOptics-Robotics.exe
+C:\Users\anon\AppData\Local\Temporary Projects\PTZOptics-Robotics\bin\Debug\PTZOptics-Robotics.pdb
+C:\Users\anon\AppData\Local\Temporary Projects\PTZOptics-Robotics\bin\Debug\PTZOptics-Robotics.xml
+C:\Users\anon\AppData\Local\Temporary Projects\PTZOptics-Robotics\obj\Debug\PTZOptics-Robotics.vbprojAssemblyReference.cache
+C:\Users\anon\AppData\Local\Temporary Projects\PTZOptics-Robotics\obj\Debug\PTZOptics_Robotics.Form1.resources
+C:\Users\anon\AppData\Local\Temporary Projects\PTZOptics-Robotics\obj\Debug\PTZOptics_Robotics.Resources.resources
+C:\Users\anon\AppData\Local\Temporary Projects\PTZOptics-Robotics\obj\Debug\PTZOptics-Robotics.vbproj.GenerateResource.cache
+C:\Users\anon\AppData\Local\Temporary Projects\PTZOptics-Robotics\obj\Debug\PTZOptics-Robotics.vbproj.CoreCompileInputs.cache
+C:\Users\anon\AppData\Local\Temporary Projects\PTZOptics-Robotics\obj\Debug\PTZOptics-Robotics.exe
+C:\Users\anon\AppData\Local\Temporary Projects\PTZOptics-Robotics\obj\Debug\PTZOptics-Robotics.xml
+C:\Users\anon\AppData\Local\Temporary Projects\PTZOptics-Robotics\obj\Debug\PTZOptics-Robotics.pdb
+C:\Users\anon\Source\Repos\PTZOptics-Robotics-Demo-VB.Net\bin\Debug\PTZOptics-Robotics.exe.config
+C:\Users\anon\Source\Repos\PTZOptics-Robotics-Demo-VB.Net\bin\Debug\PTZOptics-Robotics.exe
+C:\Users\anon\Source\Repos\PTZOptics-Robotics-Demo-VB.Net\bin\Debug\PTZOptics-Robotics.pdb
+C:\Users\anon\Source\Repos\PTZOptics-Robotics-Demo-VB.Net\bin\Debug\PTZOptics-Robotics.xml
+C:\Users\anon\Source\Repos\PTZOptics-Robotics-Demo-VB.Net\obj\Debug\PTZOptics-Robotics.vbprojAssemblyReference.cache
+C:\Users\anon\Source\Repos\PTZOptics-Robotics-Demo-VB.Net\obj\Debug\PTZOptics_Robotics.Form1.resources
+C:\Users\anon\Source\Repos\PTZOptics-Robotics-Demo-VB.Net\obj\Debug\PTZOptics_Robotics.Resources.resources
+C:\Users\anon\Source\Repos\PTZOptics-Robotics-Demo-VB.Net\obj\Debug\PTZOptics-Robotics.vbproj.GenerateResource.cache
+C:\Users\anon\Source\Repos\PTZOptics-Robotics-Demo-VB.Net\obj\Debug\PTZOptics-Robotics.vbproj.CoreCompileInputs.cache
+C:\Users\anon\Source\Repos\PTZOptics-Robotics-Demo-VB.Net\obj\Debug\PTZOptics-Robotics.exe
+C:\Users\anon\Source\Repos\PTZOptics-Robotics-Demo-VB.Net\obj\Debug\PTZOptics-Robotics.xml
+C:\Users\anon\Source\Repos\PTZOptics-Robotics-Demo-VB.Net\obj\Debug\PTZOptics-Robotics.pdb
