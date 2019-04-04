@@ -22,3 +22,16 @@ C:\Users\anon\Source\Repos\PTZOptics-Robotics-Demo-VB.Net\obj\Debug\PTZOptics-Ro
 C:\Users\anon\Source\Repos\PTZOptics-Robotics-Demo-VB.Net\obj\Debug\PTZOptics-Robotics.exe
 C:\Users\anon\Source\Repos\PTZOptics-Robotics-Demo-VB.Net\obj\Debug\PTZOptics-Robotics.xml
 C:\Users\anon\Source\Repos\PTZOptics-Robotics-Demo-VB.Net\obj\Debug\PTZOptics-Robotics.pdb
+C:\Users\anon\Source\Repos\PTZOptics\Robotics-Research-Learning-Support-Program\projects\basic_camera_control\vb.net\bin\Debug\PTZOptics-Robotics.exe.config
+C:\Users\anon\Source\Repos\PTZOptics\Robotics-Research-Learning-Support-Program\projects\basic_camera_control\vb.net\bin\Debug\PTZOptics-Robotics.exe
+C:\Users\anon\Source\Repos\PTZOptics\Robotics-Research-Learning-Support-Program\projects\basic_camera_control\vb.net\bin\Debug\PTZOptics-Robotics.pdb
+C:\Users\anon\Source\Repos\PTZOptics\Robotics-Research-Learning-Support-Program\projects\basic_camera_control\vb.net\bin\Debug\PTZOptics-Robotics.xml
+C:\Users\anon\Source\Repos\PTZOptics\Robotics-Research-Learning-Support-Program\projects\basic_camera_control\vb.net\obj\Debug\PTZOptics-Robotics.vbprojAssemblyReference.cache
+C:\Users\anon\Source\Repos\PTZOptics\Robotics-Research-Learning-Support-Program\projects\basic_camera_control\vb.net\obj\Debug\PTZOptics_Robotics.Form1.resources
+C:\Users\anon\Source\Repos\PTZOptics\Robotics-Research-Learning-Support-Program\projects\basic_camera_control\vb.net\obj\Debug\PTZOptics_Robotics.Resources.resources
+C:\Users\anon\Source\Repos\PTZOptics\Robotics-Research-Learning-Support-Program\projects\basic_camera_control\vb.net\obj\Debug\PTZOptics-Robotics.vbproj.GenerateResource.cache
+C:\Users\anon\Source\Repos\PTZOptics\Robotics-Research-Learning-Support-Program\projects\basic_camera_control\vb.net\obj\Debug\PTZOptics-Robotics.vbproj.CoreCompileInputs.cache
+C:\Users\anon\Source\Repos\PTZOptics\Robotics-Research-Learning-Support-Program\projects\basic_camera_control\vb.net\obj\Debug\PTZOptics-Robotics.exe
+C:\Users\anon\Source\Repos\PTZOptics\Robotics-Research-Learning-Support-Program\projects\basic_camera_control\vb.net\obj\Debug\PTZOptics-Robotics.xml
+C:\Users\anon\Source\Repos\PTZOptics\Robotics-Research-Learning-Support-Program\projects\basic_camera_control\vb.net\obj\Debug\PTZOptics-Robotics.pdb
+C:\Users\anon\Source\Repos\PTZOptics\Robotics-Research-Learning-Support-Program\projects\basic_camera_control\vb.net\obj\Debug\PTZOptics-Robotics.vbproj.ResolveComReference.cache

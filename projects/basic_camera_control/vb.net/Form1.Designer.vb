@@ -22,9 +22,9 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.Label14 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.FocusSpeed = New System.Windows.Forms.ComboBox()
@@ -74,6 +74,10 @@ Partial Class Form1
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Brightness = New System.Windows.Forms.ComboBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.camPW = New System.Windows.Forms.TextBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.camUN = New System.Windows.Forms.TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.SaveBtn = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.camIPtxt = New System.Windows.Forms.TextBox()
@@ -88,7 +92,6 @@ Partial Class Form1
         Me.Preset13 = New System.Windows.Forms.Button()
         Me.RadioCall = New System.Windows.Forms.RadioButton()
         Me.RadioSet = New System.Windows.Forms.RadioButton()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.Preset12 = New System.Windows.Forms.Button()
         Me.Preset11 = New System.Windows.Forms.Button()
         Me.Preset10 = New System.Windows.Forms.Button()
@@ -101,6 +104,11 @@ Partial Class Form1
         Me.Preset3 = New System.Windows.Forms.Button()
         Me.Preset2 = New System.Windows.Forms.Button()
         Me.Preset1 = New System.Windows.Forms.Button()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.statusLabel = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -111,6 +119,7 @@ Partial Class Form1
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
+        Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -120,30 +129,20 @@ Partial Class Form1
         Me.TabControl1.Location = New System.Drawing.Point(3, 12)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(299, 600)
+        Me.TabControl1.Size = New System.Drawing.Size(299, 583)
         Me.TabControl1.TabIndex = 0
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.Label14)
         Me.TabPage1.Controls.Add(Me.GroupBox3)
         Me.TabPage1.Controls.Add(Me.GroupBox2)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(291, 574)
+        Me.TabPage1.Size = New System.Drawing.Size(291, 557)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Control"
         Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(6, 554)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(120, 13)
-        Me.Label14.TabIndex = 2
-        Me.Label14.Text = "Created by Chad Burton"
         '
         'GroupBox3
         '
@@ -414,7 +413,7 @@ Partial Class Form1
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(291, 574)
+        Me.TabPage2.Size = New System.Drawing.Size(291, 557)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Settings"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -427,25 +426,25 @@ Partial Class Form1
         Me.GroupBox6.Controls.Add(Me.LinkLabel3)
         Me.GroupBox6.Controls.Add(Me.LinkLabel2)
         Me.GroupBox6.Controls.Add(Me.LinkLabel1)
-        Me.GroupBox6.Location = New System.Drawing.Point(7, 345)
+        Me.GroupBox6.Location = New System.Drawing.Point(6, 366)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(278, 222)
+        Me.GroupBox6.Size = New System.Drawing.Size(279, 191)
         Me.GroupBox6.TabIndex = 2
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Device Information"
         '
         'RichTextBox1
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(-1, 59)
+        Me.RichTextBox1.Location = New System.Drawing.Point(5, 45)
         Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(272, 157)
+        Me.RichTextBox1.Size = New System.Drawing.Size(268, 130)
         Me.RichTextBox1.TabIndex = 5
         Me.RichTextBox1.Text = ""
         '
         'LinkLabel5
         '
         Me.LinkLabel5.AutoSize = True
-        Me.LinkLabel5.Location = New System.Drawing.Point(182, 33)
+        Me.LinkLabel5.Location = New System.Drawing.Point(178, 29)
         Me.LinkLabel5.Name = "LinkLabel5"
         Me.LinkLabel5.Size = New System.Drawing.Size(73, 13)
         Me.LinkLabel5.TabIndex = 4
@@ -455,7 +454,7 @@ Partial Class Form1
         'LinkLabel4
         '
         Me.LinkLabel4.AutoSize = True
-        Me.LinkLabel4.Location = New System.Drawing.Point(87, 33)
+        Me.LinkLabel4.Location = New System.Drawing.Point(83, 29)
         Me.LinkLabel4.Name = "LinkLabel4"
         Me.LinkLabel4.Size = New System.Drawing.Size(59, 13)
         Me.LinkLabel4.TabIndex = 3
@@ -465,7 +464,7 @@ Partial Class Form1
         'LinkLabel3
         '
         Me.LinkLabel3.AutoSize = True
-        Me.LinkLabel3.Location = New System.Drawing.Point(87, 20)
+        Me.LinkLabel3.Location = New System.Drawing.Point(83, 16)
         Me.LinkLabel3.Name = "LinkLabel3"
         Me.LinkLabel3.Size = New System.Drawing.Size(68, 13)
         Me.LinkLabel3.TabIndex = 2
@@ -475,7 +474,7 @@ Partial Class Form1
         'LinkLabel2
         '
         Me.LinkLabel2.AutoSize = True
-        Me.LinkLabel2.Location = New System.Drawing.Point(6, 33)
+        Me.LinkLabel2.Location = New System.Drawing.Point(2, 29)
         Me.LinkLabel2.Name = "LinkLabel2"
         Me.LinkLabel2.Size = New System.Drawing.Size(55, 13)
         Me.LinkLabel2.TabIndex = 1
@@ -485,7 +484,7 @@ Partial Class Form1
         'LinkLabel1
         '
         Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(6, 20)
+        Me.LinkLabel1.Location = New System.Drawing.Point(2, 16)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(55, 13)
         Me.LinkLabel1.TabIndex = 0
@@ -507,9 +506,9 @@ Partial Class Form1
         Me.GroupBox5.Controls.Add(Me.Saturation)
         Me.GroupBox5.Controls.Add(Me.Label7)
         Me.GroupBox5.Controls.Add(Me.Brightness)
-        Me.GroupBox5.Location = New System.Drawing.Point(5, 108)
+        Me.GroupBox5.Location = New System.Drawing.Point(6, 137)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(279, 231)
+        Me.GroupBox5.Size = New System.Drawing.Size(279, 223)
         Me.GroupBox5.TabIndex = 1
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Image Adjustment"
@@ -633,19 +632,55 @@ Partial Class Form1
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.camPW)
+        Me.GroupBox1.Controls.Add(Me.Label16)
+        Me.GroupBox1.Controls.Add(Me.camUN)
+        Me.GroupBox1.Controls.Add(Me.Label15)
         Me.GroupBox1.Controls.Add(Me.SaveBtn)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.camIPtxt)
-        Me.GroupBox1.Location = New System.Drawing.Point(6, 19)
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 5)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(279, 83)
+        Me.GroupBox1.Size = New System.Drawing.Size(279, 126)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Camera Info"
         '
+        'camPW
+        '
+        Me.camPW.Location = New System.Drawing.Point(173, 71)
+        Me.camPW.Name = "camPW"
+        Me.camPW.Size = New System.Drawing.Size(100, 20)
+        Me.camPW.TabIndex = 6
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(15, 74)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(53, 13)
+        Me.Label16.TabIndex = 5
+        Me.Label16.Text = "Password"
+        '
+        'camUN
+        '
+        Me.camUN.Location = New System.Drawing.Point(173, 45)
+        Me.camUN.Name = "camUN"
+        Me.camUN.Size = New System.Drawing.Size(100, 20)
+        Me.camUN.TabIndex = 4
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(15, 48)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(55, 13)
+        Me.Label15.TabIndex = 3
+        Me.Label15.Text = "Username"
+        '
         'SaveBtn
         '
-        Me.SaveBtn.Location = New System.Drawing.Point(198, 50)
+        Me.SaveBtn.Location = New System.Drawing.Point(198, 97)
         Me.SaveBtn.Name = "SaveBtn"
         Me.SaveBtn.Size = New System.Drawing.Size(75, 23)
         Me.SaveBtn.TabIndex = 2
@@ -655,7 +690,7 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(15, 27)
+        Me.Label1.Location = New System.Drawing.Point(12, 22)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(58, 13)
         Me.Label1.TabIndex = 1
@@ -663,7 +698,7 @@ Partial Class Form1
         '
         'camIPtxt
         '
-        Me.camIPtxt.Location = New System.Drawing.Point(173, 24)
+        Me.camIPtxt.Location = New System.Drawing.Point(173, 19)
         Me.camIPtxt.Name = "camIPtxt"
         Me.camIPtxt.Size = New System.Drawing.Size(100, 20)
         Me.camIPtxt.TabIndex = 0
@@ -698,7 +733,6 @@ Partial Class Form1
         Me.GroupBox7.Controls.Add(Me.Preset13)
         Me.GroupBox7.Controls.Add(Me.RadioCall)
         Me.GroupBox7.Controls.Add(Me.RadioSet)
-        Me.GroupBox7.Controls.Add(Me.Label13)
         Me.GroupBox7.Controls.Add(Me.Preset12)
         Me.GroupBox7.Controls.Add(Me.Preset11)
         Me.GroupBox7.Controls.Add(Me.Preset10)
@@ -713,7 +747,7 @@ Partial Class Form1
         Me.GroupBox7.Controls.Add(Me.Preset1)
         Me.GroupBox7.Location = New System.Drawing.Point(308, 399)
         Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(323, 209)
+        Me.GroupBox7.Size = New System.Drawing.Size(323, 196)
         Me.GroupBox7.TabIndex = 4
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Presets"
@@ -793,15 +827,6 @@ Partial Class Form1
         Me.RadioSet.TabIndex = 13
         Me.RadioSet.Text = "Set"
         Me.RadioSet.UseVisualStyleBackColor = True
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Label13.Location = New System.Drawing.Point(3, 193)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(0, 13)
-        Me.Label13.TabIndex = 12
         '
         'Preset12
         '
@@ -911,11 +936,44 @@ Partial Class Form1
         Me.Preset1.Text = "1"
         Me.Preset1.UseVisualStyleBackColor = True
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.statusLabel, Me.ToolStripStatusLabel3})
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 591)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(841, 22)
+        Me.StatusStrip1.TabIndex = 13
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'ToolStripStatusLabel1
+        '
+        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(0, 17)
+        '
+        'statusLabel
+        '
+        Me.statusLabel.Name = "statusLabel"
+        Me.statusLabel.Size = New System.Drawing.Size(42, 17)
+        Me.statusLabel.Text = "Debug"
+        '
+        'ToolStripStatusLabel3
+        '
+        Me.ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
+        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(784, 17)
+        Me.ToolStripStatusLabel3.Spring = True
+        Me.ToolStripStatusLabel3.Text = "Created by Chad Burton"
+        Me.ToolStripStatusLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 2000
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(841, 613)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.GroupBox7)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.TabControl1)
@@ -923,7 +981,6 @@ Partial Class Form1
         Me.Text = "PTZOptics Robotics Demo - VB.Net  - By Chad Burton"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
-        Me.TabPage1.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -938,7 +995,10 @@ Partial Class Form1
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox7.ResumeLayout(False)
         Me.GroupBox7.PerformLayout()
+        Me.StatusStrip1.ResumeLayout(False)
+        Me.StatusStrip1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -999,7 +1059,6 @@ Partial Class Form1
     Friend WithEvents LinkLabel2 As LinkLabel
     Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents GroupBox7 As GroupBox
-    Friend WithEvents Label13 As Label
     Friend WithEvents Preset12 As Button
     Friend WithEvents Preset11 As Button
     Friend WithEvents Preset10 As Button
@@ -1014,11 +1073,19 @@ Partial Class Form1
     Friend WithEvents Preset1 As Button
     Friend WithEvents RadioCall As RadioButton
     Friend WithEvents RadioSet As RadioButton
-    Friend WithEvents Label14 As Label
     Friend WithEvents Preset18 As Button
     Friend WithEvents Preset17 As Button
     Friend WithEvents Preset16 As Button
     Friend WithEvents Preset15 As Button
     Friend WithEvents Preset14 As Button
     Friend WithEvents Preset13 As Button
+    Friend WithEvents camPW As TextBox
+    Friend WithEvents Label16 As Label
+    Friend WithEvents camUN As TextBox
+    Friend WithEvents Label15 As Label
+    Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
+    Friend WithEvents statusLabel As ToolStripStatusLabel
+    Friend WithEvents ToolStripStatusLabel3 As ToolStripStatusLabel
+    Friend WithEvents Timer1 As Timer
 End Class

@@ -1,6 +1,7 @@
 ﻿Imports System.IO
 Imports System.Net
 
+
 Public Class Form1
     Dim appPath As String = Application.StartupPath()
     Dim loaded As Boolean = False
@@ -27,7 +28,7 @@ Public Class Form1
                 '.net likes the & as code, so you have to cancel it out by using it twice
                 fullurl = fullurl.Replace("&", "&&")
                 'lets update the status text at the bottom with the URL used.
-                Label13.Text = fullurl
+                statusLabel.Text = fullurl
             End If
         Catch ex As Exception
             MessageBox.Show("Better make sure your camera IP is correct")
@@ -46,7 +47,7 @@ Public Class Form1
             System.Threading.Thread.Sleep(1000)
             ReloadSnapshot(camIP)
             fullurl = fullurl.Replace("&", "&&")
-            Label13.Text = fullurl
+            statusLabel.Text = fullurl
         Catch ex As Exception
             MessageBox.Show("Better make sure your camera IP is correct")
         End Try
@@ -64,7 +65,7 @@ Public Class Form1
             RichTextBox1.Text = responseFromServer
             ReloadSnapshot(camIP)
             fullurl = fullurl.Replace("&", "&&")
-            Label13.Text = fullurl
+            statusLabel.Text = fullurl
         Catch ex As Exception
             MessageBox.Show("Better make sure your camera IP is correct")
         End Try
@@ -81,7 +82,7 @@ Public Class Form1
             response.Close()
 
             fullurl = fullurl.Replace("&", "&&")
-            Label13.Text = fullurl
+            statusLabel.Text = fullurl
 
         Catch ex As Exception
             MessageBox.Show("Better make sure your camera IP is correct")
@@ -93,7 +94,7 @@ Public Class Form1
     Private Sub ReloadSnapshot(ByVal camip As String)
 
         If WebBrowser1.Url Is Nothing Then
-            WebBrowser1.Navigate("http://" & camip & "/snapshot.jpg")
+            WebBrowser1.Navigate("http://" & camip & "/snapshot.jpg?user=" & camUN.Text & "&pwd=" & camPW.Text)
         Else
             WebBrowser1.Refresh()
         End If
@@ -103,7 +104,16 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
         'Do we know the IP we want to connect to?
         If System.IO.File.Exists(appPath & "\ip.txt") = True Then
-            camIPtxt.Text = System.IO.File.ReadAllText(appPath & "\ip.txt")
+            Try
+                Dim IPUNPW As String() = System.IO.File.ReadAllText(appPath & "\ip.txt").Split(":")
+                camIPtxt.Text = IPUNPW(0)
+                camUN.Text = IPUNPW(1)
+                camPW.Text = IPUNPW(2)
+            Catch ex As Exception
+                camIPtxt.Text = "0.0.0.0"
+            End Try
+
+
         Else
             camIPtxt.Text = "0.0.0.0"
         End If
@@ -121,14 +131,20 @@ Public Class Form1
         Hue.SelectedIndex = 0
         Orientation.SelectedIndex = 0
 
-        'We didn't have a IP saved from a prior run, so we will ask the user for one. 
+        'We didn't have a IP saved from a prior run, so we will ask the user for one. Also need username and password
         If camIPtxt.Text = "0.0.0.0" Then
             camIPtxt.Text = InputBox("What is the IP address of the camera you'd like to control?", "IP address needed", "")
+            camUN.Text = InputBox("What is the Username of the camera you'd like to control?", "Username needed", "admin")
+            camPW.Text = InputBox("What is the Password of the camera you'd like to control?", "Password needed", "admin")
+            SaveBtn.PerformClick()
         End If
         ReloadSnapshot(camIPtxt.Text)
 
+
+
         'Now that the comboboxes are set, we can tell the app it's finally loaded so it doesn't fire off the combobox changed event.
         loaded = True
+        Timer1.Start()
     End Sub
 
 #Region "PTZ Controls"
@@ -277,7 +293,7 @@ Public Class Form1
 #Region "Save button and form closing"
     'Handle what happens when we click the save button. I have it writing to a file. Also having it ask if they'd like to save the IP when closing the app
     Private Sub SaveBtn_Click(sender As Object, e As EventArgs) Handles SaveBtn.Click
-        System.IO.File.WriteAllText(appPath & "\ip.txt", camIPtxt.Text)
+        System.IO.File.WriteAllText(appPath & "\ip.txt", camIPtxt.Text & ":" & camUN.Text & ":" & camPW.Text)
     End Sub
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         Dim result As Integer = MessageBox.Show("Do you want to save the camera IP?", "Save first?", MessageBoxButtons.YesNo)
@@ -293,6 +309,7 @@ Public Class Form1
         ReloadSnapshot(camIPtxt.Text)
     End Sub
 
+
     'All things presets
     Private Sub PresetSetCall(ByVal presetnumber As String)
         'check if we are doing a call or if it's setting 
@@ -303,7 +320,7 @@ Public Class Form1
         Else
             'not call (set)
             preset(camIPtxt.Text, "posset&" & presetnumber)
-            Label13.Text = "Preset " & presetnumber & " has been set"
+            statusLabel.Text = "Preset " & presetnumber & " has been set"
         End If
     End Sub
 #Region "Preset buttons"
@@ -361,6 +378,14 @@ Public Class Form1
     Private Sub Preset18_Click(sender As Object, e As EventArgs) Handles Preset18.Click
         PresetSetCall("18")
     End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        ReloadSnapshot(camIPtxt.Text)
+    End Sub
+
+
+
+
 #End Region
 
 End Class
