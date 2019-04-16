@@ -6,7 +6,7 @@ Flask==1.0.2
 Flask-RESTful==0.3.7
 idna==2.8
 itsdangerous==1.1.0
-Jinja2==2.10
+Jinja2==2.10.1
 MarkupSafe==1.1.1
 pytz==2018.9
 relativetimebuilder==0.2.0
