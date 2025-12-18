@@ -1,3 +1,8 @@
+> [!CAUTION]
+> 🚨 **This repository has been archived and is read-only.** 🚨
+> 
+> This project is no longer maintained. No issues, pull requests, or updates will be accepted.
+
 # PTZOptics Robotics Research & Learning Support Program
 
 PTZOptics now offers a grant program designed to help educational organizations obtain our robotic PTZ cameras for research and learning. This program helps to subsidize educational programs and research projects that take advantage of the PTZOptics robotic control and custom programming functionality.
